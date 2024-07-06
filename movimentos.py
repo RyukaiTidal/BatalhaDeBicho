@@ -24,7 +24,7 @@ class Movement:
         PokeCrit = ((2 * PokeAtkLvl * Crit) / 5) + 2
         PAD = ((PokeCrit * self.poder * (PokeAtkATK / PokeDefDEF)) / 50) + 2
         STTR = PAD * STAB * 1 * 1 * 1
-        return round(STTR)
+        return int(STTR)
 
     # Definir os textos de ação do Movimento. 1 seg de delay pra Físicos, e 0,5 pra Status.
     def texto(self, pokemontime, pokemonad, golpe):
@@ -64,5 +64,5 @@ class Gust(Movement):
 
 # Classe do Movimento SandAttack
 class SandAttack(Movement):
-    def __init__(self, nome="Sand Attack", tipo="Normal", categoria="Status", poder=0, acerto=100):
+    def __init__(self, nome="Sand Attack", tipo="Normal", categoria="Status", poder=0, acerto=80):
         super().__init__(nome, tipo, categoria, poder, acerto)
